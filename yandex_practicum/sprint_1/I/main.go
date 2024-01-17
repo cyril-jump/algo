@@ -17,8 +17,8 @@ func main() {
 	writer := makeWriter()
 	reader := makeReader()
 
-	str := readNum(reader)
-	if ok := solution(str); !ok {
+	num := readNum(reader)
+	if ok := solution(num); !ok {
 		printResult(False, writer)
 	} else {
 		printResult(True, writer)
