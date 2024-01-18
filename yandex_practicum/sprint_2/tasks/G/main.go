@@ -9,8 +9,12 @@ import (
 )
 
 const (
-	Error string = "error\n"
-	None  string = "None\n"
+	Push   string = "push"
+	Pop    string = "pop"
+	GetMax string = "get_max"
+	Top    string = "top"
+	Error  string = "error\n"
+	None   string = "None\n"
 )
 
 type Item struct {
@@ -42,13 +46,13 @@ func Solution(tasks []string) {
 		}
 
 		switch arr[0] {
-		case "push":
+		case Push:
 			stack.Push(item)
-		case "pop":
+		case Pop:
 			stack.Pop()
-		case "get_max":
+		case GetMax:
 			stack.GetMax()
-		case "top":
+		case Top:
 			stack.Peek()
 
 		default:
