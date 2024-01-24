@@ -22,7 +22,7 @@ func main() {
 	reader := makeReader()
 	writer := makeWriter()
 
-	digits := readArr(reader)
+	digits := readArrInt(reader)
 
 	solution(digits, "", writer)
 
@@ -42,12 +42,10 @@ func solution(digits []int, prefix string, writer *bufio.Writer) {
 }
 
 func makeReader() *bufio.Reader {
-	reader := bufio.NewReader(os.Stdin)
-
-	return reader
+	return bufio.NewReader(os.Stdin)
 }
 
-func readArr(reader *bufio.Reader) []int {
+func readArrInt(reader *bufio.Reader) []int {
 	str, _ := reader.ReadString('\n')
 	arrStr := strings.Split(strings.TrimSpace(str), "")
 	arrInt := make([]int, len(arrStr))
@@ -60,7 +58,5 @@ func readArr(reader *bufio.Reader) []int {
 }
 
 func makeWriter() *bufio.Writer {
-	writer := bufio.NewWriter(os.Stdout)
-
-	return writer
+	return bufio.NewWriter(os.Stdout)
 }

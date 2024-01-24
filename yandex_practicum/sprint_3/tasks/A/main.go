@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -31,20 +32,16 @@ func solution(n int, i, j int, line string, writer *bufio.Writer) {
 }
 
 func makeReader() *bufio.Reader {
-	reader := bufio.NewReader(os.Stdin)
-
-	return reader
+	return bufio.NewReader(os.Stdin)
 }
 
 func readNum(reader *bufio.Reader) int {
-	num, _, _ := reader.ReadLine()
-	intNum, _ := strconv.Atoi(string(num))
+	str, _ := reader.ReadString('\n')
+	num, _ := strconv.Atoi(strings.TrimSpace(str))
 
-	return intNum
+	return num
 }
 
 func makeWriter() *bufio.Writer {
-	writer := bufio.NewWriter(os.Stdout)
-
-	return writer
+	return bufio.NewWriter(os.Stdout)
 }
